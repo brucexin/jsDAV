@@ -55,4 +55,5 @@ See the [wiki](https://github.com/mikedeboer/jsDAV/wiki) for more information or
 ask a question in the [mailing list](https://groups.google.com/d/forum/jsdav)!
 
 
-Amsterdam, 2010. Mike de Boer.
+Modify: ShenZhen, 2015. Bruce Xin.
+Origin: Amsterdam, 2010. Mike de Boer.
