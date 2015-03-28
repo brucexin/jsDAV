@@ -11,6 +11,7 @@ var jsDAV = require("./../lib/jsdav");
 jsDAV.debugMode = true;
 var jsDAV_Locks_Backend_FS = require("./../lib/DAV/plugins/locks/fs");
 var jsDAV_FS_Directory = require("./../lib/DAV/backends/fs/directory");
+var jsDAV_Auth_Backend_Simple = require("./../lib/DAV/plugins/auth/simple_auth");
 
 function make_desktop() {
   var desktop = jsDAV_FS_Directory.new("c:/Users/qixin");
@@ -22,5 +23,7 @@ jsDAV.createServer({
     //node: __dirname + "/../test/assets",
     //locksBackend: jsDAV_Locks_Backend_FS.new(__dirname + "/../test/assets")
     node: [jsDAV_FS_Directory.new("c:/"), make_desktop()],
-    locksBackend: jsDAV_Locks_Backend_FS.new("c:/")
+    locksBackend: jsDAV_Locks_Backend_FS.new("c:/"),
+    authBackend: jsDAV_Auth_Backend_Simple.new("test", "111")
+
 }, 8000, "10.211.55.3");
